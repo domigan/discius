@@ -30,6 +30,10 @@ export class Turntable extends React.Component {
         const { selected_track } = this.state;
         if (selected_track){
             const audio = await start_stream(selected_track.id)
+            audio.onemptied = (e) => {
+                this.skip();
+                this.play();
+            }
             this.setState({playing: true, audio});
         }
     }
@@ -59,7 +63,7 @@ export class Turntable extends React.Component {
     select_genre = async (genre) => {
         this.stop();
         const queue = await list_tracks(genre);
-        const selected_track = queue.length ? queue[0] : null;
+        const selected_track = queue &&  queue.length ? queue[0] : null;
         this.setState({ queue, selected_track, selected_genre: genre })
     }
 
@@ -67,8 +71,8 @@ export class Turntable extends React.Component {
         const { selected_track, playing, selected_genre, queue, queue_index } = this.state
         return (
         <Container className='container'>
-            <Row className="row">
-                <Col className='col-3'>
+            <Row>
+                <Col className='playback-queue-container col-4'>
                     {selected_track && 
                         <div className="track-container">
                             <Playback play={this.play} skip={this.skip} stop={this.stop} playing={playing} />
@@ -86,7 +90,7 @@ export class Turntable extends React.Component {
                         <Queue queue={queue} queue_index={queue_index}/>
                     </div>
                 </Col>
-                <Col className="vinyl-container col-9">
+                <Col className="vinyl-container col-8">
                     {selected_track && selected_track.artwork && 
                         <Vinyl artwork={selected_track.artwork} playing={playing} />
                     }

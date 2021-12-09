@@ -9,7 +9,7 @@ https://audiusproject.github.io/api-docs/#audius-api-docs
 TO RUN:
 
 CLONE THE REPO
-NPM INSTALL
+YARN INSTALL
 YARN START
 YOU KNOW THE DRILL
 #=================================
