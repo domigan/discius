@@ -3,56 +3,56 @@ html {
   height: 100%;
 }
 body {
-  background-image: url('https://i.pinimg.com/originals/80/39/b5/8039b5ac22ba3aa1d97d49fa30b1e8ad.gif');
+  background-image: url("https://i.pinimg.com/originals/80/39/b5/8039b5ac22ba3aa1d97d49fa30b1e8ad.gif");
   margin: 0;
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-   /* Full height */
-   height: 100%;
+  /* Full height */
+  height: 100%;
 
-   /* Center and scale the image nicely */
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.queue-item:nth-child(2n){
+.queue-item {
+  padding-top: 10px;
+}
+
+.queue-item:nth-child(2n) {
   background-color: grey;
 }
-.queue-item:nth-child(2n+1){
+.queue-item:nth-child(2n + 1) {
   border-radius: 5px;
   background-color: plum;
 }
 
 .playback-btn {
   padding: 10px;
-  border-radius: 5px;
   border: medium 1px black;
 }
-.dropdown-menu {         
+.dropdown-menu {
   max-height: 200px;
   overflow-y: auto;
 }
-.track-queue {         
+.track-queue {
   max-height: 600px;
   overflow-y: auto;
   font-size: small;
-  border-radius: 5px;
-  border:cornflowerblue 1px outset;
+  border: cornflowerblue 1px outset;
 }
 .controls {
   padding: 10px;
 }
 
-.search-container{
-  border-radius: 5px;
-  border:cornflowerblue 1px outset;
+.search-container {
   padding: 10px;
 }
 
@@ -61,19 +61,16 @@ code {
   justify-content: center;
 }
 
-.playback-queue-container{
+.playback-queue-container {
   position: absolute;
   z-index: 1000;
 }
-
 
 .track-container {
   font-family: "Fira Sans", Helvetica, Arial, sans-serif;
   width: 100%;
   height: 200px;
   padding: 10px;
-  border-radius: 5px;
-  border:cornflowerblue 1px outset;
   font-size: medium;
 }
 
